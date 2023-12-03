@@ -6,8 +6,8 @@ const port = 3000;
 
 const connection = mysql.createConnection({
   host: 'localhost',
-  user: 'seu_usuario_mysql',
-  password: 'sua_senha_mysql',
+  user: 'Kaian',
+  password: '1233456789',
   database: 'pokemon_api',
 });
 
