@@ -1,8 +1,8 @@
--- mysqldump --user=root -p --add-drop-database --complete-insert --dump-date --events --force --hex-blob --opt --add-drop-table --add-locks --create-options --disable-keys --extended-insert=1 --quick --set-charset --skip-lock-tables --order-by-primary --quote-names --single-transaction --tz-utc --verbose --result-file=dump.sql --databases sistdist
+-- mysqldump --user=root -p --add-drop-database --complete-insert --dump-date --events --force --hex-blob --opt --add-drop-table --add-locks --create-options --disable-keys --extended-insert=1 --quick --set-charset --skip-lock-tables --order-by-primary --quote-names --single-transaction --tz-utc --verbose --result-file=dump.sql --databases pokemon_api
 
 -- MySQL dump 10.17  Distrib 10.3.22-MariaDB, for debian-linux-gnu (x86_64)
 --
--- Host: localhost    Database: sistdist
+-- Host: localhost    Database: pokemon_api
 -- ------------------------------------------------------
 -- Server version	10.3.22-MariaDB-0+deb10u1
 
@@ -18,51 +18,51 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `sistdist`
+-- Current Database: `pokemon_api`
 --
 
-/*!40000 DROP DATABASE IF EXISTS `sistdist`*/;
+/*!40000 DROP DATABASE IF EXISTS `pokemon_api`*/;
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `sistdist` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `pokemon_api` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 
-USE `sistdist`;
+USE `pokemon_api`;
 
 --
--- Table structure for table `access`
+-- Table structure for table `captured_pokemon`
 --
 
-DROP TABLE IF EXISTS `access`;
+DROP TABLE IF EXISTS `captured_pokemon`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `access` (
-  `idaccess` int(11) NOT NULL AUTO_INCREMENT,
-  `timestamp` varchar(45) NOT NULL,
-  `hostname` varchar(45) NOT NULL,
-  `ip` varchar(19) NOT NULL,
-  PRIMARY KEY (`idaccess`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `captured_pokemon` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(455) NOT NULL,
+  `base_experience` INT NOT NULL,
+  `front_default_url` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `access`
+-- Dumping data for table `captured_pokemon`
 --
--- ORDER BY:  `idaccess`
+-- ORDER BY:  `id`
 
-LOCK TABLES `access` WRITE;
-/*!40000 ALTER TABLE `access` DISABLE KEYS */;
-INSERT INTO `access` (`idaccess`, `timestamp`, `hostname`, `ip`) VALUES (1,'1590347486815','JJACER','192.168.56.1'),(2,'1590347528219','JJACER','192.168.56.1'),(3,'1590347920570','JJACER','192.168.56.1'),(4,'1590347932492','JJACER','192.168.56.1'),(5,'1590347934120','JJACER','192.168.56.1'),(6,'1590347935217','JJACER','192.168.56.1'),(7,'1590347967252','JJACER','192.168.56.1'),(8,'1590347968356','JJACER','192.168.56.1'),(9,'1590348050143','JJACER','192.168.56.1'),(10,'1590348071644','JJACER','192.168.56.1'),(11,'1590349076334','JJACER','192.168.56.1'),(12,'1590349112004','JJACER','192.168.56.1'),(13,'1590349266214','JJACER','192.168.56.1'),(14,'1590349280203','JJACER','192.168.56.1'),(15,'1590350165797','JJACER','192.168.56.1');
-/*!40000 ALTER TABLE `access` ENABLE KEYS */;
+LOCK TABLES `captured_pokemon` WRITE;
+/*!40000 ALTER TABLE `captured_pokemon` DISABLE KEYS */;
+-- Adicione aqui os comandos INSERT conforme necessário
+/*!40000 ALTER TABLE `captured_pokemon` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Dumping events for database 'sistdist'
+-- Dumping events for database 'pokemon_api'
 --
 
 --
 -- Dumping users and grants
 --
-CREATE USER IF NOT EXISTS aula@'%' IDENTIFIED WITH mysql_native_password BY 'aula';
-GRANT ALL PRIVILEGES ON SISTDIST.* TO aula@'%';
+CREATE USER IF NOT EXISTS kaian@'%' IDENTIFIED WITH mysql_native_password BY '123456789';
+GRANT ALL PRIVILEGES ON pokemon_api.* TO kaian@'%';
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -74,4 +74,5 @@ GRANT ALL PRIVILEGES ON SISTDIST.* TO aula@'%';
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-24 17:14:50
+-- Dump completed on 2023-11-29 17:14:50
+
